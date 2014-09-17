@@ -16,7 +16,10 @@ typedef void(^ImageDownloaderCompletionBlock)(UIImage *image, NSError *);   // 1
 
 @interface ImageDownloader : NSObject
 
-@property (nonatomic, readonly) UIImage *image;
+@property (nonatomic, strong) NSDictionary *dict;
+@property (nonatomic, strong) UIImage *image, *bigImage;
+
+- (instancetype)initWithDict:(NSDictionary *)dict;
 
 - (void)downloadImageAtURL:(NSURL *)URL
                 completion:(void(^)(UIImage *image, NSError*))completion;

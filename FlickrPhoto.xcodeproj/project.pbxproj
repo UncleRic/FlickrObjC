@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		1806DA6319C7B5C500867A73 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1806DA6219C7B5C500867A73 /* Images.xcassets */; };
 		1806DA6519C7B9F200867A73 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 1806DA6419C7B9F200867A73 /* README.md */; };
+		1806DA6E19C8CA8D00867A73 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1806DA6D19C8CA8D00867A73 /* DetailViewController.m */; };
 		1892AA8719C671DD00B5D429 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1892AA8619C671DD00B5D429 /* main.m */; };
 		1892AA8A19C671DD00B5D429 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1892AA8919C671DD00B5D429 /* AppDelegate.m */; };
-		1892AA8D19C671DD00B5D429 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1892AA8C19C671DD00B5D429 /* ViewController.m */; };
+		1892AA8D19C671DD00B5D429 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1892AA8C19C671DD00B5D429 /* MainViewController.m */; };
 		1892AA9019C671DD00B5D429 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1892AA8E19C671DD00B5D429 /* Main.storyboard */; };
 		1892AA9519C671DD00B5D429 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1892AA9319C671DD00B5D429 /* LaunchScreen.xib */; };
 		1892AAA119C671DD00B5D429 /* FlickrPhotoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1892AAA019C671DD00B5D429 /* FlickrPhotoTests.m */; };
@@ -45,13 +46,15 @@
 /* Begin PBXFileReference section */
 		1806DA6219C7B5C500867A73 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1806DA6419C7B9F200867A73 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1806DA6C19C8CA8D00867A73 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		1806DA6D19C8CA8D00867A73 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		1892AA8119C671DD00B5D429 /* FlickrPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1892AA8519C671DD00B5D429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1892AA8619C671DD00B5D429 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1892AA8819C671DD00B5D429 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1892AA8919C671DD00B5D429 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1892AA8B19C671DD00B5D429 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1892AA8C19C671DD00B5D429 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1892AA8B19C671DD00B5D429 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		1892AA8C19C671DD00B5D429 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		1892AA8F19C671DD00B5D429 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1892AA9419C671DD00B5D429 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1892AA9A19C671DD00B5D429 /* FlickrPhotoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickrPhotoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +84,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1806DA6F19C8CA9300867A73 /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1806DA6C19C8CA8D00867A73 /* DetailViewController.h */,
+				1806DA6D19C8CA8D00867A73 /* DetailViewController.m */,
+			);
+			name = DetailViewController;
+			sourceTree = "<group>";
+		};
 		1892AA7819C671DD00B5D429 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +117,7 @@
 			children = (
 				1892AAAA19C671E500B5D429 /* App Delegate */,
 				1892AAAB19C671F000B5D429 /* ViewController */,
+				1806DA6F19C8CA9300867A73 /* DetailViewController */,
 				1892AAAF19C6773600B5D429 /* SimpleFlickerAPI */,
 				1892AAB319C77EC900B5D429 /* ImageDownloader */,
 				1892AA8E19C671DD00B5D429 /* Main.storyboard */,
@@ -153,8 +166,8 @@
 		1892AAAB19C671F000B5D429 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1892AA8B19C671DD00B5D429 /* ViewController.h */,
-				1892AA8C19C671DD00B5D429 /* ViewController.m */,
+				1892AA8B19C671DD00B5D429 /* MainViewController.h */,
+				1892AA8C19C671DD00B5D429 /* MainViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -279,11 +292,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1806DA6519C7B9F200867A73 /* README.md in Sources */,
-				1892AA8D19C671DD00B5D429 /* ViewController.m in Sources */,
+				1892AA8D19C671DD00B5D429 /* MainViewController.m in Sources */,
 				1892AA8A19C671DD00B5D429 /* AppDelegate.m in Sources */,
 				1892AAB219C77E4B00B5D429 /* ImageDownloader.m in Sources */,
 				1892AA8719C671DD00B5D429 /* main.m in Sources */,
 				1892AAAE19C6773000B5D429 /* SimpleFlickrAPI.m in Sources */,
+				1806DA6E19C8CA8D00867A73 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

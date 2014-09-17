@@ -18,13 +18,24 @@
 
 @implementation ImageDownloader
 
+#pragma mark Singleton functions
+
 - (NSString *)debugDescription {
-    return [NSString stringWithFormat:@"{ImageDownloader} image: %@", _image];
+    return [NSString stringWithFormat:@"{ImageDownloader} \nbigImage: %@\ndict: %@", _bigImage, _dict];
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+
+- (instancetype)initWithDict:(NSDictionary *)dict {
+    if (self = [super init]) {
+        self.dict = dict;
+    }
+    return self;
 }
 
 // -----------------------------------------------------------------------------------------------------------------------
 - (void)downloadImageAtURL:(NSURL *)URL
-                completion:(void(^)(UIImage *image, NSError*))completion {
+                completion:(void(^)(UIImage *image, NSError *))completion {
     if (URL) {
         [[[NSURLSession sharedSession] dataTaskWithURL:URL
                                      completionHandler:^(NSData *data,
@@ -33,7 +44,7 @@
                                          if (!error) {
                                              dispatch_async(dispatch_get_main_queue(), ^{
                                                  UIImage *image = [UIImage imageWithData:(NSData *)data];
-                                                 completion(image, nil);
+                                                  completion(image, nil);
                                             });
                                          } else {
                                              completion(nil, error);
