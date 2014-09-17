@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FlickrPhoto/ViewController.m"
-            timestampString = "432516022.5316"
+            filePath = "FlickrPhoto/DetailViewController.m"
+            timestampString = "432611487.843258"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "-displayBigImage"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
