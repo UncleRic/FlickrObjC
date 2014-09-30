@@ -34,6 +34,20 @@
                ReferencedContainer = "container:FlickrPhoto.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "18F70CA819DB54EA00872126"
+               BuildableName = "FlickrPhoto Tests.xctest"
+               BlueprintName = "FlickrPhoto Tests"
+               ReferencedContainer = "container:FlickrPhoto.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,6 +63,16 @@
                BlueprintIdentifier = "1892AA9919C671DD00B5D429"
                BuildableName = "FlickrPhotoTests.xctest"
                BlueprintName = "FlickrPhotoTests"
+               ReferencedContainer = "container:FlickrPhoto.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "18F70CA819DB54EA00872126"
+               BuildableName = "FlickrPhoto Tests.xctest"
+               BlueprintName = "FlickrPhoto Tests"
                ReferencedContainer = "container:FlickrPhoto.xcodeproj">
             </BuildableReference>
          </TestableReference>
