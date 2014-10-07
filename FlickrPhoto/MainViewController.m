@@ -13,7 +13,6 @@
 @interface MainViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *downloaders;
-@property (nonatomic, strong) NSArray *photoInfos;
 @end
 
 @implementation MainViewController
@@ -31,6 +30,7 @@
 }
 
 // -----------------------------------------------------------------------------------------------------------------------
+#pragma mark -
 
 - (void)fetchFlickrPhotoWithSearchString:(NSString *)searchString {
     
@@ -48,11 +48,11 @@
                                                                                                   options:NSJSONReadingAllowFragments
                                                                                                     error:&error];
                                          
-                                         self.photoInfos = [[jsonDict objectForKey:@"photos"] objectForKey:@"photo"];
+                                         NSArray *photoInfos = [[jsonDict objectForKey:@"photos"] objectForKey:@"photo"];
                                          
-                                         NSMutableArray *downloaders = [[NSMutableArray alloc] initWithCapacity:[_photoInfos count]];
-                                         for (NSInteger index = 0; index < [_photoInfos count]; index++) {
-                                             ImageDownloader *downloader = [[ImageDownloader alloc] initWithDict:_photoInfos[index]];
+                                         NSMutableArray *downloaders = [[NSMutableArray alloc] initWithCapacity:[photoInfos count]];
+                                         for (NSInteger index = 0; index < [photoInfos count]; index++) {
+                                             ImageDownloader *downloader = [[ImageDownloader alloc] initWithDict:photoInfos[index]];
                                              [downloaders addObject:downloader];
                                          }
                                          self.downloaders = downloaders; // ...link local array with instance array 'downloaders' (Note: same object!).
@@ -76,7 +76,7 @@
 #pragma mark - UICollectionViewDataSource methods
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.photoInfos count];
+    return [self.downloaders count];
 }
 
 // -----------------------------------------------------------------------------------------------------------------------
@@ -115,8 +115,9 @@
     if (image) {
         photoImageView.image = image;
     } else {
-        NSURL *URL = [NSURL URLWithString: _photoInfos[_selectedItemIndex][@"url_sq"]];
-        [_currentImageDownloader downloadImageAtURL:URL completion:completion];
+        NSURL *url = [NSURL URLWithString:[_downloaders[_selectedItemIndex] dict][@"url_sq"]];
+//        NSURL *URL = [NSURL URLWithString: _photoInfos[_selectedItemIndex][@"url_sq"]];
+        [_currentImageDownloader downloadImageAtURL:url completion:completion];
     }
     
     return cell;
