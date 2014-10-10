@@ -116,7 +116,6 @@
         photoImageView.image = image;
     } else {
         NSURL *url = [NSURL URLWithString:[_downloaders[_selectedItemIndex] dict][@"url_sq"]];
-//        NSURL *URL = [NSURL URLWithString: _photoInfos[_selectedItemIndex][@"url_sq"]];
         [_currentImageDownloader downloadImageAtURL:url completion:completion];
     }
     
