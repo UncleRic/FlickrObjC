@@ -24,6 +24,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    self.title = @"Flickr Viewer";
     if (_currentImageDownloader) {
         [_downloaders replaceObjectAtIndex:_selectedItemIndex withObject:_currentImageDownloader];
     }
