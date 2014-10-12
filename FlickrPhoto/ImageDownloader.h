@@ -12,7 +12,8 @@
 // To make the code more readable, the ImageDownloaderCompletionBlock typedef is defined.
 // This approach means that you do not have to redeclare the block definition everywhere it is used.
 
-typedef void(^ImageDownloaderCompletionBlock)(UIImage *image, NSError *);   // 1
+typedef void(^ImageDownloaderCompletionBlock)(UIImage *image, NSError *error);   // 1
+
 
 @interface ImageDownloader : NSObject
 
@@ -22,6 +23,6 @@ typedef void(^ImageDownloaderCompletionBlock)(UIImage *image, NSError *);   // 1
 - (instancetype)initWithDict:(NSDictionary *)dict;
 
 - (void)downloadImageAtURL:(NSURL *)URL
-                completion:(void(^)(UIImage *image, NSError*))completion;
+                completion:(void(^)(UIImage *image, NSError *error))completion;
 
 @end

@@ -113,13 +113,13 @@
         <!--Detail View Controller-->
         <scene sceneID="Hv7-7P-OKc">
             <objects>
-                <viewController id="IAz-vM-OBc" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" id="IAz-vM-OBc" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cI0-hS-LPw"/>
                         <viewControllerLayoutGuide type="bottom" id="3y5-PR-yDV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VA6-X3-SxW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1vJ-ef-27Z">

@@ -35,7 +35,7 @@
 
 // -----------------------------------------------------------------------------------------------------------------------
 - (void)downloadImageAtURL:(NSURL *)URL
-                completion:(void(^)(UIImage *image, NSError *))completion {
+                completion:(void(^)(UIImage *image, NSError *error))completion {
     if (URL) {
         [[[NSURLSession sharedSession] dataTaskWithURL:URL
                                      completionHandler:^(NSData *data,

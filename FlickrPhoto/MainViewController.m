@@ -104,6 +104,7 @@
         }
     };
     
+    
     _selectedItemIndex = [indexPath item];   // ...NSIndexPath (UICollectionViewAdditions)
     
     self.currentImageDownloader = [_downloaders objectAtIndex:_selectedItemIndex];
