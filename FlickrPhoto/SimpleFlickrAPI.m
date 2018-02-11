@@ -40,6 +40,9 @@ NSString const *sharkAPIKey = @"949e98778755d1982f537d56236bbb42";
 #define flickrParamPhotoSetId @"photoset_id"
 #define flickrParamExtras @"extras"
 #define flickrParamText @"text"
+#define flickrParamTag @"tags"
+#define flickrParamTagMode @"tag_mode"
+
 // ------------------------------------------------------------------------------------
 //The Flickr API includes a parameter named method.
 // This parameter defines which API method is called.
@@ -55,12 +58,14 @@ NSString const *sharkAPIKey = @"949e98778755d1982f537d56236bbb42";
 @implementation SimpleFlickrAPI
 
 
-- (NSURL *)getURLForString:(NSString *)str {
+- (NSURL *)getURLForString:(NSString *)str tags:(NSString *)tags {
     
     NSDictionary *parameters = @{
                                  flickrParamMethod : flickrMethodSearchPhotos,
                                  flickrParamAppKey : sharkAPIKey,
                                  flickrParamText : str,
+                                 flickrParamTag : tags,
+                                 flickrParamTagMode : @"all",
                                  flickrParamExtras : @"url_t, url_s, url_m, url_sq",
                                  };
     
@@ -83,8 +88,8 @@ NSString const *sharkAPIKey = @"949e98778755d1982f537d56236bbb42";
         [URLString appendFormat:@"%@=%@&", key,
          [value stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     }
-    NSURL *URL = [NSURL URLWithString:URLString];
-    return URL;
+    NSURL *url = [NSURL URLWithString:URLString];
+    return url;
 }
 
 // -----------------------------------------------------------------------------------------------------------------------

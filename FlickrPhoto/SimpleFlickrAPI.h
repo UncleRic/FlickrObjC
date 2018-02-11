@@ -10,7 +10,6 @@
 @interface SimpleFlickrAPI : NSObject
 
 - (NSString *)stringByRemovingFlickrJavaScript:(NSData *)data;
-
-- (NSURL *)getURLForString:(NSString *)str;
+- (NSURL *)getURLForString:(NSString *)str tags:(NSString *)tags;
 
 @end

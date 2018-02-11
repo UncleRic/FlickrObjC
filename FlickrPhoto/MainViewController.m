@@ -18,9 +18,11 @@
 
 @implementation MainViewController
 
+NSString *searchText = @"Shark";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self fetchFlickrPhotoWithSearchString:@"Ric"];
+    [self fetchFlickrPhotoWithSearchString:searchText tag:@"[shark, ocean"];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -34,12 +36,11 @@
 // -----------------------------------------------------------------------------------------------------------------------
 #pragma mark -
 
-- (void)fetchFlickrPhotoWithSearchString:(NSString *)searchString {
+- (void)fetchFlickrPhotoWithSearchString:(NSString *)searchString tag: (NSString *)tags {
     
     SimpleFlickrAPI *flickr = [SimpleFlickrAPI new];
     
-    
-    [[[NSURLSession sharedSession] dataTaskWithURL:[flickr getURLForString:@"shark"]
+    [[[NSURLSession sharedSession] dataTaskWithURL:[flickr getURLForString: searchString tags:tags]
                                  completionHandler:^(NSData *data,
                                                      NSURLResponse *response,
                                                      NSError *error) {
