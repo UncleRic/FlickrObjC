@@ -9,9 +9,10 @@
 #import "SimpleFlickrAPI.h"
 #import "ImageDownloader.h"
 #import "DetailViewController.h"
+#import "PhotoCollectionView.h"
 
 @interface MainViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet PhotoCollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *downloaders;
 @end
 
