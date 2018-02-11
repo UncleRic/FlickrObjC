@@ -74,8 +74,8 @@ NSString const *sharkAPIKey = @"949e98778755d1982f537d56236bbb42";
 // (22) The method -buildFlickrURLWithParameters: takes the dictionary of parameters and creates the URL to the API call.
 // This is done by appending each key-value pair in the dictionary as a query string parameter to the base Flickr API URL.
 
-- (NSURL *)buildFlickrURLWithParameters:(NSDictionary *)parameters      // 22
-{
+- (NSURL *)buildFlickrURLWithParameters:(NSDictionary *)parameters {     // 22
+
     NSMutableString *URLString = [[NSMutableString alloc]
                                   initWithString:flickrBaseURL];
     for (id key in parameters) {
@@ -91,8 +91,8 @@ NSString const *sharkAPIKey = @"949e98778755d1982f537d56236bbb42";
 // (23) The method -stringWithData: converts the contents of an NSData object to a string.
 // As you will see momentarily, the response data from Flickr requires a bit of tweaking before NSJSONSerialization can parse it.
 
-- (NSString *)stringWithData:(NSData *)data                             // 23
-{
+- (NSString *)stringWithData:(NSData *)data   {                          // 23
+
     NSString *result = [[NSString alloc] initWithBytes:[data bytes]
                                                 length:[data length]
   
@@ -106,8 +106,8 @@ NSString const *sharkAPIKey = @"949e98778755d1982f537d56236bbb42";
 // Consequently, the response data is converted from an NSData object to an NSString object.
 // The JavaScript function is then stripped from the string, resulting in the string containing only the JSON-formatted data.
 
-- (NSString *)stringByRemovingFlickrJavaScript:(NSData *)data           // 24
-{
+- (NSString *)stringByRemovingFlickrJavaScript:(NSData *)data    {       // 24
+
     // Flickr returns a JavaScript function containing the JSON data.
     // We need to strip out the JavaScript part before we can parse
     // the JSON data. Ex: jsonFlickrApi(JSON-DATA-HERE).
