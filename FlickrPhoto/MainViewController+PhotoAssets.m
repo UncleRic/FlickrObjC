@@ -12,17 +12,32 @@
 @implementation MainViewController (PhotoAssets)
 
 - (void)photoLibrary {
-    Boolean status = [self DetermineStatus];
-    NSLog(@"Photo Library Status: %s", status? "true" : "false");
+    [self RequestLibraryAccess];
     
 }
 
-- (Boolean)DetermineStatus {
+- (void)RequestLibraryAccess {
     
-    Boolean status = [PHPhotoLibrary authorizationStatus];
-    
-    
-    return status;
+    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+        
+        switch (status) {
+            case PHAuthorizationStatusAuthorized:
+                NSLog(@"PHAuthorizationStatusAuthorized");
+                break;
+                
+            case PHAuthorizationStatusDenied:
+                NSLog(@"PHAuthorizationStatusDenied");
+                break;
+            case PHAuthorizationStatusNotDetermined:
+                NSLog(@"PHAuthorizationStatusNotDetermined");
+                break;
+            case PHAuthorizationStatusRestricted:
+                NSLog(@"PHAuthorizationStatusRestricted");
+                break;
+        }
+        
+    }];
+   
 }
 
 @end
