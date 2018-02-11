@@ -10,6 +10,7 @@
 		1806DA6319C7B5C500867A73 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1806DA6219C7B5C500867A73 /* Images.xcassets */; };
 		1806DA6519C7B9F200867A73 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 1806DA6419C7B9F200867A73 /* README.md */; };
 		1806DA6E19C8CA8D00867A73 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1806DA6D19C8CA8D00867A73 /* DetailViewController.m */; };
+		18552A9E2030FDF300B3744A /* MainViewController+PhotoAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 18552A9D2030FDF300B3744A /* MainViewController+PhotoAssets.m */; };
 		1892AA8719C671DD00B5D429 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1892AA8619C671DD00B5D429 /* main.m */; };
 		1892AA8A19C671DD00B5D429 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1892AA8919C671DD00B5D429 /* AppDelegate.m */; };
 		1892AA8D19C671DD00B5D429 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1892AA8C19C671DD00B5D429 /* MainViewController.m */; };
@@ -49,6 +50,8 @@
 		1806DA6419C7B9F200867A73 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1806DA6C19C8CA8D00867A73 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		1806DA6D19C8CA8D00867A73 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		18552A9C2030FDF300B3744A /* MainViewController+PhotoAssets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MainViewController+PhotoAssets.h"; sourceTree = "<group>"; };
+		18552A9D2030FDF300B3744A /* MainViewController+PhotoAssets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MainViewController+PhotoAssets.m"; sourceTree = "<group>"; };
 		1892AA8119C671DD00B5D429 /* FlickrPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1892AA8519C671DD00B5D429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1892AA8619C671DD00B5D429 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				1892AA8B19C671DD00B5D429 /* MainViewController.h */,
+				18552A9C2030FDF300B3744A /* MainViewController+PhotoAssets.h */,
+				18552A9D2030FDF300B3744A /* MainViewController+PhotoAssets.m */,
 				1892AA8C19C671DD00B5D429 /* MainViewController.m */,
 			);
 			name = ViewController;
@@ -306,6 +311,7 @@
 			files = (
 				1806DA6519C7B9F200867A73 /* README.md in Sources */,
 				18B607CF202FCD3200A08E97 /* PhotoCollectionView.m in Sources */,
+				18552A9E2030FDF300B3744A /* MainViewController+PhotoAssets.m in Sources */,
 				1892AA8D19C671DD00B5D429 /* MainViewController.m in Sources */,
 				1892AA8A19C671DD00B5D429 /* AppDelegate.m in Sources */,
 				1892AAB219C77E4B00B5D429 /* ImageDownloader.m in Sources */,
