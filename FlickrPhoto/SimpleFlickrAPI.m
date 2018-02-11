@@ -10,7 +10,7 @@
 
 NSString const *flickrAPIKey = @"ebbefd0c0a07c996f7867f014778adf7";
 NSString const *flickrAPISecret = @"bf823c361bc6f09e";
-
+NSString const *sharkAPIKey = @"949e98778755d1982f537d56236bbb42";
 
 // Changes this value to your own application key. More info
 // at http://www.flickr.com/services/api/misc.api_keys.html.
@@ -24,6 +24,9 @@ NSString const *flickrAPISecret = @"bf823c361bc6f09e";
 
 #define flickrBaseURL \
 @"https://api.flickr.com/services/rest/?format=json&"                    // 3
+
+
+// @"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=949e98778755d1982f537d56236bbb42&text=shark&format=json&nojsoncallback=1&page=1"
 
 // ------------------------------------------------------------------------------------
 // The Flickr API uses different parameter names.
@@ -56,7 +59,7 @@ NSString const *flickrAPISecret = @"bf823c361bc6f09e";
     
     NSDictionary *parameters = @{
                                  flickrParamMethod : flickrMethodSearchPhotos,
-                                 flickrParamAppKey : flickrAPIKey,
+                                 flickrParamAppKey : sharkAPIKey,
                                  flickrParamText : str,
                                  flickrParamExtras : @"url_t, url_s, url_m, url_sq",
                                  };
@@ -77,7 +80,7 @@ NSString const *flickrAPISecret = @"bf823c361bc6f09e";
     
     NSDictionary *parameters = @{
                                  flickrParamMethod : flickrMethodSearchPhotos,
-                                 flickrParamAppKey : flickrAPIKey,
+                                 flickrParamAppKey : sharkAPIKey,
                                  flickrParamText : string,
                                  flickrParamExtras : @"url_t, url_s, url_m, url_sq",
                                  };                                                                   // 7
@@ -97,7 +100,7 @@ NSString const *flickrAPISecret = @"bf823c361bc6f09e";
 {
     NSDictionary *parameters = @{
                                  flickrParamMethod : flickrMethodFindByUsername,
-                                 flickrParamAppKey : flickrAPIKey,
+                                 flickrParamAppKey : sharkAPIKey,
                                  flickrParamUsername : username,
                                  };
     NSDictionary *json = [self flickrJSONSWithParameters:parameters];
@@ -113,7 +116,7 @@ NSString const *flickrAPISecret = @"bf823c361bc6f09e";
 {
     NSDictionary *parameters = @{
                                  flickrParamMethod : flickrMethodGetPhotoSetList,
-                                 flickrParamAppKey : flickrAPIKey,
+                                 flickrParamAppKey : sharkAPIKey,
                                  flickrParamUserid : userId,
                                  };
     NSDictionary *json = [self flickrJSONSWithParameters:parameters];
@@ -128,7 +131,7 @@ NSString const *flickrAPISecret = @"bf823c361bc6f09e";
 {
     NSDictionary *parameters = @{
                                  flickrParamMethod : flickrMethodGetPhotosWithPhotoSetId,
-                                 flickrParamAppKey : flickrAPIKey,
+                                 flickrParamAppKey : sharkAPIKey,
                                  flickrParamPhotoSetId : photoSetId,
                                  flickrParamExtras : @"url_t, url_s, url_m, url_sq",
                                  };

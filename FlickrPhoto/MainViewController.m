@@ -39,7 +39,7 @@
     SimpleFlickrAPI *flickr = [SimpleFlickrAPI new];
     
     
-    [[[NSURLSession sharedSession] dataTaskWithURL:[flickr getURLForString:@"Ric"]
+    [[[NSURLSession sharedSession] dataTaskWithURL:[flickr getURLForString:@"shark"]
                                  completionHandler:^(NSData *data,
                                                      NSURLResponse *response,
                                                      NSError *error) {
