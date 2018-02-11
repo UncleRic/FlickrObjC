@@ -22,7 +22,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     NSString *title = _currentImageDownloader.dict[@"title"];
-    if ([[title substringToIndex:7] isEqualToString:@"Unknown"]) {
+    if (title.length == 0) {
         self.title = @"No Title";
     } else {
         self.title = title;
