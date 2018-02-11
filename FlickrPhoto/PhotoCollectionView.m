@@ -26,7 +26,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    [self recenterIfNecessary];
+   // [self recenterIfNecessary];
 }
 
 @end

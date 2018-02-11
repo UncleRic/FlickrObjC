@@ -96,6 +96,15 @@
 			name = DetailViewController;
 			sourceTree = "<group>";
 		};
+		18552A982030E2A400B3744A /* PhotoCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				18B607D0202FCD4400A08E97 /* PhotoCollectionView.h */,
+				18B607CE202FCD3200A08E97 /* PhotoCollectionView.m */,
+			);
+			name = PhotoCollectionView;
+			sourceTree = "<group>";
+		};
 		1892AA7819C671DD00B5D429 = {
 			isa = PBXGroup;
 			children = (
@@ -124,8 +133,7 @@
 				1892AAAF19C6773600B5D429 /* SimpleFlickerAPI */,
 				1892AAB319C77EC900B5D429 /* ImageDownloader */,
 				1892AA8E19C671DD00B5D429 /* Main.storyboard */,
-				18B607CE202FCD3200A08E97 /* PhotoCollectionView.m */,
-				18B607D0202FCD4400A08E97 /* PhotoCollectionView.h */,
+				18552A982030E2A400B3744A /* PhotoCollectionView */,
 				1806DA6219C7B5C500867A73 /* Images.xcassets */,
 				1892AA9319C671DD00B5D429 /* LaunchScreen.xib */,
 				1892AA8419C671DD00B5D429 /* Supporting Files */,
