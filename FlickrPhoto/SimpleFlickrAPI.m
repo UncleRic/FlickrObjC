@@ -93,25 +93,24 @@ NSString const *sharkAPIKey = @"949e98778755d1982f537d56236bbb42";
 }
 
 // -----------------------------------------------------------------------------------------------------------------------
-// (23) The method -stringWithData: converts the contents of an NSData object to a string.
+// The method -stringWithData: converts the contents of an NSData object to a string.
 // As you will see momentarily, the response data from Flickr requires a bit of tweaking before NSJSONSerialization can parse it.
 
-- (NSString *)stringWithData:(NSData *)data   {                          // 23
+- (NSString *)stringWithData:(NSData *)data   {
 
     NSString *result = [[NSString alloc] initWithBytes:[data bytes]
                                                 length:[data length]
-  
                                               encoding:NSUTF8StringEncoding];
     return result;
 }
 
 // -----------------------------------------------------------------------------------------------------------------------
-// (24) The method -stringByRemovingFlickrJavaScript: returns a cleaned-up version of the Flickr API response data.
+// The method -stringByRemovingFlickrJavaScript: returns a cleaned-up version of the Flickr API response data.
 // The Flickr API wraps the response data in a JavaScript function, but the SimpleFlickrAPI wants only the JSON data.
 // Consequently, the response data is converted from an NSData object to an NSString object.
 // The JavaScript function is then stripped from the string, resulting in the string containing only the JSON-formatted data.
 
-- (NSString *)stringByRemovingFlickrJavaScript:(NSData *)data    {       // 24
+- (NSString *)stringByRemovingFlickrJavaScript:(NSData *)data    {
 
     // Flickr returns a JavaScript function containing the JSON data.
     // We need to strip out the JavaScript part before we can parse

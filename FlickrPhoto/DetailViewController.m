@@ -12,7 +12,6 @@
 #import "DetailViewController+PhotoAssets.h"
 
 @interface DetailViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) MainViewController *mainViewController;
 @end
 
@@ -36,8 +35,12 @@
     }
     [self displayBigImage];
 }
+
+// -----------------------------------------------------------------------------------------------------------------
+#pragma mark - Action methods
+
 - (IBAction)saveImageAction:(UIBarButtonItem *)sender {
-    NSLog(@"--- save Image --");
+    [self savePhoto];
 }
 
 // -----------------------------------------------------------------------------------------------------------------------
@@ -54,7 +57,6 @@
 // -----------------------------------------------------------------------------------------------------------------------
 
 - (void)displayBigImage {
-    
     ImageDownloaderCompletionBlock completion = ^(UIImage *image, NSError *error) {
         if (image) {
             self.imageView.image = image;

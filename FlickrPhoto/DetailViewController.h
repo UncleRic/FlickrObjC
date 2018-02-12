@@ -9,6 +9,5 @@
 
 @interface DetailViewController : UIViewController
 @property (nonatomic, strong) ImageDownloader *currentImageDownloader;
-@property (nonatomic, strong) UIImage *image;
-
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @end
