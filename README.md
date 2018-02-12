@@ -3,6 +3,10 @@ Flickr
 
 Flickr is a popular on-line image repository.  This is a simple photo-access application.
 
+<b> Note: </b> This is a ***work-in-progress***. <br/>
+This code is written in Objective-C per Code Challenge.<br/>
+My <em>preference</em> is Swift 4.0.
+<p>
 <b>Modus Operandi</b><br/>
 There are two (2) different reads from the server:<br/>
 <ul>
@@ -24,4 +28,9 @@ in real time.
 <br/>
 <ul>
 <li>Add Least Recently-Used (LRU) cache to hold UICollection's images.</li>
+</ul>
+<b>Probable Enhancement:</b>
+<br/>
+<ul>
+<li>Re-write in Swift 4+.</li>
 </ul>
