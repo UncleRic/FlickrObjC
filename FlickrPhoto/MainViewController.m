@@ -14,7 +14,7 @@
 @interface MainViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet PhotoCollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *downloaders;
-@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
 @end
 
 @implementation MainViewController
@@ -24,11 +24,7 @@ NSString *searchText = @"Shark";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = false;
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
-    //    [self.collectionView insertSubview:self.refreshControl atIndex:0];
-    //    self.refreshControl.layer.zPosition = -1;
-    //    self.collectionView.alwaysBounceVertical = YES;
+    [self initiateRefreshData];
     [self fetchFlickrPhotoWithSearchString:searchText tag:@"[shark, ocean"];
 }
 
@@ -40,8 +36,24 @@ NSString *searchText = @"Shark";
     }
 }
 
+- (void)initiateRefreshData {
+    UIRefreshControl *refreshControl = [UIRefreshControl new];
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refresh Data"];
+    refreshControl.tintColor = [UIColor redColor];
+    [refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
+    self.collectionView.refreshControl = refreshControl;
+}
 
-- (void)handleRefresh:
+- (void)handleRefresh:(NSObject *)sender {
+    //    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refresh now"];
+    //    // ... update datasource
+    //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    //        self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"Updated %@", [NSDate date]]];
+    //        [self.refreshControl endRefreshing];
+    //        [self.collectionView reloadData];
+    //    });
+    NSLog(@"do something");
+}
 
 // -----------------------------------------------------------------------------------------------------------------------
 #pragma mark -
