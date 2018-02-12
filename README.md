@@ -24,11 +24,6 @@ The <b>per collection-item</b> retrieval uses a callback block that is defined &
 UICollectionView's Cell/Index is populated with the respective image;
 in real time.
 <p>
-<b>Possible Enhancements:</b>
-<br/>
-<ul>
-<li>Add Least Recently-Used (LRU) cache to hold UICollection's images.</li>
-</ul>
 <b>Probable Enhancement:</b>
 <br/>
 <ul>
