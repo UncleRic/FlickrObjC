@@ -11,9 +11,10 @@
 #import "DetailViewController.h"
 #import "PhotoCollectionView.h"
 
-@interface MainViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface MainViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet PhotoCollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *downloaders;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @end
 
 @implementation MainViewController
@@ -22,7 +23,12 @@ NSString *searchText = @"Shark";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   // [self saveImage];
+    self.automaticallyAdjustsScrollViewInsets = false;
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
+    //    [self.collectionView insertSubview:self.refreshControl atIndex:0];
+    //    self.refreshControl.layer.zPosition = -1;
+    //    self.collectionView.alwaysBounceVertical = YES;
     [self fetchFlickrPhotoWithSearchString:searchText tag:@"[shark, ocean"];
 }
 
@@ -33,6 +39,9 @@ NSString *searchText = @"Shark";
         [_downloaders replaceObjectAtIndex:_selectedItemIndex withObject:_currentImageDownloader];
     }
 }
+
+
+- (void)handleRefresh:
 
 // -----------------------------------------------------------------------------------------------------------------------
 #pragma mark -

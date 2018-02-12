@@ -13,20 +13,21 @@
 
 - (void)recenterIfNecessary {
     CGPoint currentOffset = self.contentOffset;
-    CGFloat contentHeight = self.contentSize.height;
-    CGFloat centerOffsetY = (contentHeight - self.bounds.size.width) / 2.0;
-    CGFloat distanceFromCenter = fabs(currentOffset.y - centerOffsetY);
+    CGFloat contentWidth = self.contentSize.width;
+    CGFloat centerOffsetX = (contentWidth - self.bounds.size.width) / 2.0;
+    CGFloat distanceFromCenter = fabs(currentOffset.x - centerOffsetX);
     
-    if (distanceFromCenter > (contentHeight / 4.0)) {
+    if (distanceFromCenter > (contentWidth / 4.0)) {
         NSLog(@"** recenterIfNecessary **");
-        self.contentOffset = CGPointMake(currentOffset.x, centerOffsetY);
+        self.contentOffset = CGPointMake(centerOffsetX, currentOffset.y);
         // Move content by the same amount so it appears to stay still.
+       
     }
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-   // [self recenterIfNecessary];
+  //  [self recenterIfNecessary];
 }
 
 @end
