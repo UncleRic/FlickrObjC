@@ -23,6 +23,7 @@ NSString *searchText = @"Shark";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [MainViewController RequestLibraryAccess];
     [self photoLibrary];
     [self fetchFlickrPhotoWithSearchString:searchText tag:@"[shark, ocean"];
 }

@@ -7,7 +7,12 @@
 //
 
 #import "MainViewController.h"
+#import <Photos/PHPhotoLibrary.h>
+#import <Photos/PHAssetResource.h>
 
 @interface MainViewController (PhotoAssets)
+//@property (nonatomic, strong) PHAsset *photoAsset;
++ (void)RequestLibraryAccess;
 - (void)photoLibrary;
+
 @end

@@ -143,7 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				1892AAAA19C671E500B5D429 /* App Delegate */,
-				1892AAAB19C671F000B5D429 /* ViewController */,
+				1892AAAB19C671F000B5D429 /* MainViewController */,
 				1806DA6F19C8CA9300867A73 /* DetailViewController */,
 				1892AAAF19C6773600B5D429 /* SimpleFlickerAPI */,
 				1892AAB319C77EC900B5D429 /* ImageDownloader */,
@@ -174,15 +174,15 @@
 			name = "App Delegate";
 			sourceTree = "<group>";
 		};
-		1892AAAB19C671F000B5D429 /* ViewController */ = {
+		1892AAAB19C671F000B5D429 /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
 				1892AA8B19C671DD00B5D429 /* MainViewController.h */,
+				1892AA8C19C671DD00B5D429 /* MainViewController.m */,
 				18552A9C2030FDF300B3744A /* MainViewController+PhotoAssets.h */,
 				18552A9D2030FDF300B3744A /* MainViewController+PhotoAssets.m */,
-				1892AA8C19C671DD00B5D429 /* MainViewController.m */,
 			);
-			name = ViewController;
+			name = MainViewController;
 			sourceTree = "<group>";
 		};
 		1892AAAF19C6773600B5D429 /* SimpleFlickerAPI */ = {

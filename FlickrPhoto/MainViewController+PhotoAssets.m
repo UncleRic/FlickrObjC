@@ -7,16 +7,15 @@
 //
 
 #import "MainViewController+PhotoAssets.h"
-#import <Photos/PHPhotoLibrary.h>
+
 
 @implementation MainViewController (PhotoAssets)
 
 - (void)photoLibrary {
-    [self RequestLibraryAccess];
     
 }
 
-- (void)RequestLibraryAccess {
++ (void)RequestLibraryAccess {
     
     [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
         
