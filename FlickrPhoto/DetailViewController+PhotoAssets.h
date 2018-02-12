@@ -14,6 +14,6 @@
 @interface DetailViewController (PhotoAssets)
 //@property (nonatomic, strong) PHAsset *photoAsset;
 + (void)RequestLibraryAccess;
-- (void)savePhotoFile:(NSURL *)fileURL;
+- (void)savePhoto;
 
 @end

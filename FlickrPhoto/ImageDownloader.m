@@ -44,8 +44,8 @@
                                          if (!error) {
                                              dispatch_async(dispatch_get_main_queue(), ^{
                                                  UIImage *image = [UIImage imageWithData:(NSData *)data];
-                                                  completion(image, nil);
-                                            });
+                                                 completion(image, nil);
+                                             });
                                          } else {
                                              completion(nil, error);
                                              NSLog(@"--- {ImageDownLoader} Error: %@ ---",error);
@@ -53,7 +53,7 @@
                                      }] resume];
         
     }
-  
+    
 }
 
 

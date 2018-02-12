@@ -37,9 +37,9 @@
 #pragma mark - Instance Methods
 // -----------------------------------------------------------------------------------------------------------------
 
-- (void)savePhotoFile:(NSURL *)fileURL {
+- (void)savePhoto {
     [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-        PHAssetChangeRequest *assetChangeRequest = [PHAssetChangeRequest creationRequestForAssetFromImageAtFileURL:fileURL];
+        PHAssetChangeRequest *assetChangeRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:self.image];
     } completionHandler:^(BOOL success, NSError * _Nullable error) {
         // Do Something.
     }];

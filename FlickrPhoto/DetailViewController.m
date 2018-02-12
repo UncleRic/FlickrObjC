@@ -14,7 +14,6 @@
 @interface DetailViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) MainViewController *mainViewController;
-
 @end
 
 @implementation DetailViewController
@@ -29,6 +28,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     NSString *title = _currentImageDownloader.dict[@"title"];
+    
     if (title.length == 0) {
         self.title = @"No Title";
     } else {
