@@ -36,6 +36,10 @@
     [self displayBigImage];
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    self.statusLabel.hidden = true;
+}
+
 // -----------------------------------------------------------------------------------------------------------------
 #pragma mark - Action methods
 

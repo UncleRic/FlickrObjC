@@ -9,6 +9,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Papyrus.ttc">
+            <string>Papyrus</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Main View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -115,26 +120,39 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B43-31-XB6">
+                                <rect key="frame" x="16" y="573" width="343" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="n7v-uv-xxD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="24"/>
+                                <color key="textColor" red="0.32549019610000002" green="0.45882352939999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.72256713699999997" green="0.84031080160000005" blue="0.61844744730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="3y5-PR-yDV" firstAttribute="top" secondItem="1vJ-ef-27Z" secondAttribute="bottom" constant="98" id="7aI-xm-ey0"/>
                             <constraint firstItem="tB3-Uz-Gvi" firstAttribute="centerX" secondItem="1vJ-ef-27Z" secondAttribute="centerX" id="G9e-ER-gMY"/>
+                            <constraint firstItem="B43-31-XB6" firstAttribute="leading" secondItem="VA6-X3-SxW" secondAttribute="leadingMargin" id="ODP-4V-zF6"/>
                             <constraint firstItem="3y5-PR-yDV" firstAttribute="top" secondItem="tB3-Uz-Gvi" secondAttribute="bottom" constant="1" id="SJD-qX-5Wr"/>
                             <constraint firstItem="1vJ-ef-27Z" firstAttribute="top" secondItem="cI0-hS-LPw" secondAttribute="bottom" constant="11" id="bEP-07-aAb"/>
                             <constraint firstItem="1vJ-ef-27Z" firstAttribute="leading" secondItem="VA6-X3-SxW" secondAttribute="leadingMargin" constant="10" id="dOc-yp-aPV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1vJ-ef-27Z" secondAttribute="trailing" constant="10" id="elp-9a-igL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="B43-31-XB6" secondAttribute="trailing" id="m72-mC-giL"/>
+                            <constraint firstItem="tB3-Uz-Gvi" firstAttribute="top" secondItem="B43-31-XB6" secondAttribute="bottom" constant="17" id="maa-pA-yS4"/>
                             <constraint firstItem="tB3-Uz-Gvi" firstAttribute="leading" secondItem="VA6-X3-SxW" secondAttribute="leading" id="uOH-TQ-Cj4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1nC-9O-PP2"/>
                     <connections>
                         <outlet property="imageView" destination="1vJ-ef-27Z" id="nS9-pm-6Lp"/>
+                        <outlet property="statusLabel" destination="B43-31-XB6" id="Vz8-J7-tfn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vf3-6l-ZJt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1421" y="-68"/>
+            <point key="canvasLocation" x="1420.5" y="-68.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="js5-H1-yDa">
