@@ -41,11 +41,30 @@ NSString *searchText = @"Shark";
     refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refresh Data"];
     refreshControl.tintColor = UIColor.redColor;
     refreshControl.backgroundColor = UIColor.whiteColor;
+    UIImage *hook = [UIImage imageNamed:@"Hook"];
+    UIImageView *hookImageView = [[UIImageView alloc] initWithImage:hook];
+    UIImage *fish = [UIImage imageNamed:@"Fish"];
+    UIImageView *fishImageView = [[UIImageView alloc] initWithImage:fish];
+    
+    UIStackView *stackView = [[UIStackView alloc] initWithArrangedSubviews:@[hookImageView ,fishImageView]];
+    stackView.axis = UILayoutConstraintAxisVertical;
+    stackView.spacing = 10.0;
+    [refreshControl addSubview:stackView];
+    
+    [stackView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    UILayoutGuide *container = [refreshControl layoutMarginsGuide];
+    [stackView.leadingAnchor constraintEqualToAnchor:container.leadingAnchor].active = YES;
+    [stackView.topAnchor constraintEqualToAnchor:container.topAnchor].active = YES;
+    
     [refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
     self.collectionView.refreshControl = refreshControl;
 }
 
 - (void)handleRefresh:(NSObject *)sender {
+    
+    
+    
     //    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refresh now"];
     //    // ... update datasource
     //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
