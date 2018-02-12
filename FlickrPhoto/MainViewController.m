@@ -143,10 +143,6 @@ NSString *searchText = @"Shark";
 // -----------------------------------------------------------------------------------------------------------------------
 #pragma mark - Action methods
 
-- (IBAction)doSomethingAction:(id)sender {
-    return;
-}
-
 - (IBAction)exitAction:(id)sender {
     exit(0);
 }

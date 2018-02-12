@@ -22,39 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ric's Flickr" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKo-tf-9Mq">
-                                <rect key="frame" x="145" y="110" width="85" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="MUe-sn-G98"/>
-                                    <constraint firstAttribute="width" constant="85" id="P7Q-V8-ngB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KkL-yo-Mzv">
-                                <rect key="frame" x="313" y="617" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="PFb-hm-Ske"/>
-                                </constraints>
-                                <state key="normal" title="Exit">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="exitAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HKx-Kc-Z13"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BZ-rV-4fM">
-                                <rect key="frame" x="26" y="617" width="98" height="30"/>
-                                <state key="normal" title="Do Something">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="doSomethingAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bzT-mg-4Ma"/>
-                                </connections>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="whB-m8-kge" customClass="PhotoCollectionView">
-                                <rect key="frame" x="16" y="139" width="345" height="430"/>
+                                <rect key="frame" x="16" y="64" width="345" height="559"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YCI-Vb-5X8">
                                     <size key="itemSize" width="75" height="75"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -90,19 +59,26 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="8IJ-wg-zhE"/>
                                 </connections>
                             </collectionView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qtM-17-M0O">
+                                <rect key="frame" x="0.0" y="624" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Exit" id="7Gx-4k-5HI">
+                                        <connections>
+                                            <action selector="exitAction:" destination="vXZ-lx-hvc" id="cyk-hQ-5Ny"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="0.79795017739999996" green="0.93767279579999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="8BZ-rV-4fM" firstAttribute="baseline" secondItem="KkL-yo-Mzv" secondAttribute="baseline" id="0in-95-wX7"/>
-                            <constraint firstItem="8BZ-rV-4fM" firstAttribute="top" secondItem="whB-m8-kge" secondAttribute="bottom" constant="48" id="5L6-h5-1ge"/>
-                            <constraint firstItem="8BZ-rV-4fM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="CKE-pm-mxh"/>
-                            <constraint firstAttribute="bottom" secondItem="8BZ-rV-4fM" secondAttribute="bottom" constant="20" symbolic="YES" id="ESH-BS-1bg"/>
+                            <constraint firstItem="qtM-17-M0O" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="G0D-tL-U97"/>
                             <constraint firstItem="whB-m8-kge" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="OsL-5N-Vcx"/>
-                            <constraint firstItem="KkL-yo-Mzv" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="gwj-A0-iye"/>
-                            <constraint firstItem="WKo-tf-9Mq" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="lUo-Ds-6iv"/>
-                            <constraint firstItem="WKo-tf-9Mq" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="46" id="n0D-Yr-CIC"/>
-                            <constraint firstItem="whB-m8-kge" firstAttribute="top" secondItem="WKo-tf-9Mq" secondAttribute="bottom" constant="8" symbolic="YES" id="oKZ-IR-TFC"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="qtM-17-M0O" secondAttribute="bottom" constant="-1" id="XRl-P6-2Vj"/>
+                            <constraint firstAttribute="trailing" secondItem="qtM-17-M0O" secondAttribute="trailing" id="Xm2-7D-epe"/>
+                            <constraint firstItem="qtM-17-M0O" firstAttribute="top" secondItem="whB-m8-kge" secondAttribute="bottom" constant="1" id="qhS-DO-u8z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="whB-m8-kge" secondAttribute="trailing" constant="-2" id="tfV-cX-Jyh"/>
+                            <constraint firstItem="whB-m8-kge" firstAttribute="top" secondItem="5Nc-CO-JEQ" secondAttribute="bottom" id="wca-ob-M3i"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="01O-Ol-gRk"/>
@@ -112,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="-66"/>
+            <point key="canvasLocation" x="853.5" y="-66.5"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Hv7-7P-OKc">

@@ -10,6 +10,8 @@
 #import <Photos/PHPhotoLibrary.h>
 #import <Photos/PHAssetResource.h>
 #import <Photos/PHAssetChangeRequest.h>
+#import <Photos/PHAssetCollectionChangeRequest.h>
+#import <Photos/PHCollection.h>
 
 @interface DetailViewController (PhotoAssets)
 //@property (nonatomic, strong) PHAsset *photoAsset;
