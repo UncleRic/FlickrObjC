@@ -86,7 +86,7 @@ NSString const *sharkAPIKey = @"949e98778755d1982f537d56236bbb42";
     for (id key in parameters) {
         NSString *value = [parameters objectForKey:key];
         [URLString appendFormat:@"%@=%@&", key,
-         [value stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+         [value stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
     }
     NSURL *url = [NSURL URLWithString:URLString];
     return url;
