@@ -52,11 +52,10 @@ NSString *searchText = @"Shark";
     [refreshControl addSubview:stackView];
     
     [stackView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    
     UILayoutGuide *container = [refreshControl layoutMarginsGuide];
-    [stackView.leadingAnchor constraintEqualToAnchor:container.leadingAnchor].active = YES;
     [stackView.topAnchor constraintEqualToAnchor:container.topAnchor].active = YES;
-    
+    CGFloat width = refreshControl.bounds.size.width;
+    [stackView.leftAnchor constraintEqualToAnchor:container.leftAnchor constant:width/2].active = YES;
     [refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
     self.collectionView.refreshControl = refreshControl;
 }
