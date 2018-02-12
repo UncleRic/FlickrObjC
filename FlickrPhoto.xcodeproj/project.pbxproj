@@ -10,6 +10,7 @@
 		1806DA6319C7B5C500867A73 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1806DA6219C7B5C500867A73 /* Images.xcassets */; };
 		1806DA6519C7B9F200867A73 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 1806DA6419C7B9F200867A73 /* README.md */; };
 		1806DA6E19C8CA8D00867A73 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1806DA6D19C8CA8D00867A73 /* DetailViewController.m */; };
+		1825142F20321B8300EFA035 /* SharkFeed-Flickr-CodingExercise.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1825142E20321B8300EFA035 /* SharkFeed-Flickr-CodingExercise.pdf */; };
 		18552A9E2030FDF300B3744A /* DetailViewController+PhotoAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 18552A9D2030FDF300B3744A /* DetailViewController+PhotoAssets.m */; };
 		18552AA1203101F300B3744A /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18552AA0203101F300B3744A /* Photos.framework */; };
 		1892AA8719C671DD00B5D429 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1892AA8619C671DD00B5D429 /* main.m */; };
@@ -51,6 +52,7 @@
 		1806DA6419C7B9F200867A73 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1806DA6C19C8CA8D00867A73 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		1806DA6D19C8CA8D00867A73 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		1825142E20321B8300EFA035 /* SharkFeed-Flickr-CodingExercise.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "SharkFeed-Flickr-CodingExercise.pdf"; path = "../../Desktop/SharkFeed-Flickr-CodingExercise.pdf"; sourceTree = "<group>"; };
 		18552A9C2030FDF300B3744A /* DetailViewController+PhotoAssets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DetailViewController+PhotoAssets.h"; sourceTree = "<group>"; };
 		18552A9D2030FDF300B3744A /* DetailViewController+PhotoAssets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DetailViewController+PhotoAssets.m"; sourceTree = "<group>"; };
 		18552AA0203101F300B3744A /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
@@ -124,6 +126,7 @@
 		1892AA7819C671DD00B5D429 = {
 			isa = PBXGroup;
 			children = (
+				1825142E20321B8300EFA035 /* SharkFeed-Flickr-CodingExercise.pdf */,
 				1806DA6419C7B9F200867A73 /* README.md */,
 				1892AA8319C671DD00B5D429 /* FlickrPhoto */,
 				18F70CAA19DB54EA00872126 /* FlickrPhoto Tests */,
@@ -303,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1892AA9019C671DD00B5D429 /* Main.storyboard in Resources */,
+				1825142F20321B8300EFA035 /* SharkFeed-Flickr-CodingExercise.pdf in Resources */,
 				1806DA6319C7B5C500867A73 /* Images.xcassets in Resources */,
 				1892AA9519C671DD00B5D429 /* LaunchScreen.xib in Resources */,
 			);
