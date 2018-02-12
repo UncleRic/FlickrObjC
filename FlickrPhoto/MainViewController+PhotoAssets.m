@@ -10,18 +10,9 @@
 
 
 @implementation MainViewController (PhotoAssets)
-
-- (void)SaveImage:(UIImage *)image {
-    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-        // Do Something.
-    } completionHandler:^(BOOL success, NSError * _Nullable error) {
-        // Do Something.
-    }];
-   
-}
+#pragma mark - Class Methods
 
 + (void)RequestLibraryAccess {
-    
     [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
         
         switch (status) {
@@ -41,24 +32,20 @@
         }
         
     }];
-   
 }
 
-//func saveImage(image: UIImage, completion: (Bool, NSError?) -> Void) {
-//
-//    if assetCollection == nil {
-//        return   // If there was an error upstream, skip the save.
-//    }
-//
-//    PHPhotoLibrary.sharedPhotoLibrary().performChanges({
-//        let assetChangeRequest = PHAssetChangeRequest.creationRequestForAssetFromImage(image)
-//        let assetPlaceholder = assetChangeRequest.placeholderForCreatedAsset
-//        let albumChangeRequest = PHAssetCollectionChangeRequest(forAssetCollection: self.assetCollection)
-//        albumChangeRequest?.addAssets([assetPlaceholder!])
-//    }, completionHandler: completion )
-//}
-//
-//}
+#pragma mark - Instance Methods
+// -----------------------------------------------------------------------------------------------------------------
+
+- (void)savePhotoFile:(NSURL *)fileURL {
+    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+        PHAssetChangeRequest *assetChangeRequest = [PHAssetChangeRequest creationRequestForAssetFromImageAtFileURL:fileURL];
+    } completionHandler:^(BOOL success, NSError * _Nullable error) {
+        // Do Something.
+    }];
+    
+}
+
 
 
 @end

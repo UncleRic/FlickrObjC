@@ -29,6 +29,9 @@
     }
     [self displayBigImage];
 }
+- (IBAction)saveImageAction:(UIBarButtonItem *)sender {
+    NSLog(@"--- save Image --");
+}
 
 // -----------------------------------------------------------------------------------------------------------------------
 

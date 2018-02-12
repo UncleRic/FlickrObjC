@@ -9,10 +9,11 @@
 #import "MainViewController.h"
 #import <Photos/PHPhotoLibrary.h>
 #import <Photos/PHAssetResource.h>
+#import <Photos/PHAssetChangeRequest.h>
 
 @interface MainViewController (PhotoAssets)
 //@property (nonatomic, strong) PHAsset *photoAsset;
 + (void)RequestLibraryAccess;
-- (void)SaveImage:(UIImage *)image;
+- (void)savePhotoFile:(NSURL *)fileURL;
 
 @end

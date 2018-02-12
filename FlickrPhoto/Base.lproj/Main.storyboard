@@ -132,7 +132,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tB3-Uz-Gvi">
                                 <rect key="frame" x="0.0" y="622" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Save" id="Pkj-5b-rsi"/>
+                                    <barButtonItem title="Save" id="Pkj-5b-rsi">
+                                        <connections>
+                                            <action selector="saveImageAction:" destination="IAz-vM-OBc" id="PLe-lg-tKl"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
