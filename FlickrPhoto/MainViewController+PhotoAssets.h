@@ -13,6 +13,6 @@
 @interface MainViewController (PhotoAssets)
 //@property (nonatomic, strong) PHAsset *photoAsset;
 + (void)RequestLibraryAccess;
-- (void)photoLibrary;
+- (void)SaveImage:(UIImage *)image;
 
 @end

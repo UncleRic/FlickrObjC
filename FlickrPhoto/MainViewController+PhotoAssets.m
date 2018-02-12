@@ -11,8 +11,13 @@
 
 @implementation MainViewController (PhotoAssets)
 
-- (void)photoLibrary {
-    
+- (void)SaveImage:(UIImage *)image {
+    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+        // Do Something.
+    } completionHandler:^(BOOL success, NSError * _Nullable error) {
+        // Do Something.
+    }];
+   
 }
 
 + (void)RequestLibraryAccess {
@@ -38,5 +43,22 @@
     }];
    
 }
+
+//func saveImage(image: UIImage, completion: (Bool, NSError?) -> Void) {
+//
+//    if assetCollection == nil {
+//        return   // If there was an error upstream, skip the save.
+//    }
+//
+//    PHPhotoLibrary.sharedPhotoLibrary().performChanges({
+//        let assetChangeRequest = PHAssetChangeRequest.creationRequestForAssetFromImage(image)
+//        let assetPlaceholder = assetChangeRequest.placeholderForCreatedAsset
+//        let albumChangeRequest = PHAssetCollectionChangeRequest(forAssetCollection: self.assetCollection)
+//        albumChangeRequest?.addAssets([assetPlaceholder!])
+//    }, completionHandler: completion )
+//}
+//
+//}
+
 
 @end
