@@ -9,7 +9,7 @@
 #import "DetailViewController.h"
 #import "ImageDownloader.h"
 #import "MainViewController.h"
-
+#import "DetailViewController+PhotoAssets.h"
 
 @interface DetailViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -18,6 +18,13 @@
 @end
 
 @implementation DetailViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [DetailViewController RequestLibraryAccess];
+}
+
+// -----------------------------------------------------------------------------------------------------------------
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];

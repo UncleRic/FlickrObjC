@@ -10,7 +10,6 @@
 #import "ImageDownloader.h"
 #import "DetailViewController.h"
 #import "PhotoCollectionView.h"
-#import "MainViewController+PhotoAssets.h"
 
 @interface MainViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet PhotoCollectionView *collectionView;
@@ -23,7 +22,6 @@ NSString *searchText = @"Shark";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [MainViewController RequestLibraryAccess];
    // [self saveImage];
     [self fetchFlickrPhotoWithSearchString:searchText tag:@"[shark, ocean"];
 }
