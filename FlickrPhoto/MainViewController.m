@@ -39,7 +39,8 @@ NSString *searchText = @"Shark";
 - (void)initiateRefreshData {
     UIRefreshControl *refreshControl = [UIRefreshControl new];
     refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refresh Data"];
-    refreshControl.tintColor = [UIColor redColor];
+    refreshControl.tintColor = UIColor.redColor;
+    refreshControl.backgroundColor = UIColor.whiteColor;
     [refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
     self.collectionView.refreshControl = refreshControl;
 }
