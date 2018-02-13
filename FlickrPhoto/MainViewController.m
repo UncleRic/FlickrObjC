@@ -14,7 +14,6 @@
 @interface MainViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet PhotoCollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *downloaders;
-
 @end
 
 @implementation MainViewController
@@ -23,8 +22,7 @@ NSString *searchText = @"Shark";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.automaticallyAdjustsScrollViewInsets = false;
-    [self initiateRefreshData];
+    [self setupRefreshControl];
     [self fetchFlickrPhotoWithSearchString:searchText tag:@"[shark, ocean"];
 }
 
@@ -36,7 +34,7 @@ NSString *searchText = @"Shark";
     }
 }
 
-- (void)initiateRefreshData {
+- (void)setupRefreshControl {
     UIRefreshControl *refreshControl = [UIRefreshControl new];
     refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refresh Data"];
     refreshControl.tintColor = UIColor.redColor;
@@ -60,7 +58,7 @@ NSString *searchText = @"Shark";
     self.collectionView.refreshControl = refreshControl;
 }
 
-- (void)handleRefresh:(NSObject *)sender {
+- (void)handleRefresh:(UIRefreshControl *)sender {
     
     
     
@@ -68,9 +66,11 @@ NSString *searchText = @"Shark";
     //    // ... update datasource
     //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
     //        self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"Updated %@", [NSDate date]]];
-    //        [self.refreshControl endRefreshing];
-    //        [self.collectionView reloadData];
+    [sender endRefreshing];
+         //   [self.refreshControl endRefreshing];
+//            [self.collectionView reloadData];
     //    });
+    
     NSLog(@"do something");
 }
 

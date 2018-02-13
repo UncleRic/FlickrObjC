@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlickrPhoto/MainViewController.m"
-            timestampString = "540172136.216341"
+            timestampString = "540173008.557627"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "-handleRefresh:"
             landmarkType = "7">
          </BreakpointContent>
