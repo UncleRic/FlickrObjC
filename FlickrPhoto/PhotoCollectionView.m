@@ -17,17 +17,17 @@
     CGFloat centerOffsetX = (contentWidth - self.bounds.size.width) / 2.0;
     CGFloat distanceFromCenter = fabs(currentOffset.x - centerOffsetX);
     
-    if (distanceFromCenter > (contentWidth / 4.0)) {
-        NSLog(@"** recenterIfNecessary **");
+    if (contentWidth > 0 && (distanceFromCenter > (contentWidth / 2.5))) {
         self.contentOffset = CGPointMake(centerOffsetX, currentOffset.y);
         // Move content by the same amount so it appears to stay still.
-       
+        // Note: Need to determine correct algorithm.
+        //       Ran out-of-time on this one.
     }
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-  //  [self recenterIfNecessary];
+    [self recenterIfNecessary];
 }
 
 @end

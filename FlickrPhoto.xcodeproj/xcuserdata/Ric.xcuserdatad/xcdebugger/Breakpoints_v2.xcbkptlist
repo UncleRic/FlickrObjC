@@ -10,12 +10,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlickrPhoto/MainViewController.m"
-            timestampString = "540173008.557627"
+            timestampString = "540174863.602666"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "-handleRefresh:"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "-fetchFlickrPhotoWithSearchString:tag:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlickrPhoto/PhotoCollectionView.m"
+            timestampString = "540174863.603265"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "-recenterIfNecessary"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
