@@ -40,22 +40,28 @@
     self.statusLabel.hidden = true;
 }
 
+- (void)displayAlert {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Sorry, Not Available"
+                                                                   message:@""
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 // -----------------------------------------------------------------------------------------------------------------
 #pragma mark - Action methods
 
-- (IBAction)saveImageAction:(UIBarButtonItem *)sender {
+- (IBAction)downloadAction:(UIButton *)sender {
     [self savePhoto];
 }
 
-// -----------------------------------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------------------------
 
-- (void)willMoveToParentViewController:(UINavigationController *)navController {
-    if (navController) {
-        self.mainViewController = [navController viewControllers][0];
-    } else {
-        self.currentImageDownloader.bigImage = self.imageView.image;
-        _mainViewController.currentImageDownloader = _currentImageDownloader;
-    }
+- (IBAction)openInAppAction:(UIButton *)sender {
+    [self displayAlert];
 }
 
 // -----------------------------------------------------------------------------------------------------------------------
