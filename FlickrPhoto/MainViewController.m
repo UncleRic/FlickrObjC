@@ -14,6 +14,7 @@
 @interface MainViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet PhotoCollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *downloaders;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @end
 
 @implementation MainViewController
@@ -34,11 +35,22 @@ NSString *searchText = @"Shark";
     }
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self.refreshControl endRefreshing];
+}
+
+
+- (void) NSApplicationWillResignActiveNotification {
+    [self.refreshControl endRefreshing];
+}
+
+
 - (void)setupRefreshControl {
-    UIRefreshControl *refreshControl = [UIRefreshControl new];
-    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refresh Data"];
-    refreshControl.tintColor = UIColor.redColor;
-    refreshControl.backgroundColor = UIColor.whiteColor;
+    self.refreshControl = [UIRefreshControl new];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refresh Data"];
+    self.refreshControl.tintColor = UIColor.redColor;
+    self.refreshControl.backgroundColor = UIColor.whiteColor;
     UIImage *hook = [UIImage imageNamed:@"Hook"];
     UIImageView *hookImageView = [[UIImageView alloc] initWithImage:hook];
     UIImage *fish = [UIImage imageNamed:@"Fish"];
@@ -47,15 +59,15 @@ NSString *searchText = @"Shark";
     UIStackView *stackView = [[UIStackView alloc] initWithArrangedSubviews:@[hookImageView ,fishImageView]];
     stackView.axis = UILayoutConstraintAxisVertical;
     stackView.spacing = 10.0;
-    [refreshControl addSubview:stackView];
+    [self.refreshControl addSubview:stackView];
     
     [stackView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    UILayoutGuide *container = [refreshControl layoutMarginsGuide];
+    UILayoutGuide *container = [_refreshControl layoutMarginsGuide];
     [stackView.topAnchor constraintEqualToAnchor:container.topAnchor].active = YES;
-    CGFloat width = refreshControl.bounds.size.width;
+    CGFloat width = self.refreshControl.bounds.size.width;
     [stackView.leftAnchor constraintEqualToAnchor:container.leftAnchor constant:width/2].active = YES;
-    [refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
-    self.collectionView.refreshControl = refreshControl;
+    [self.refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
+    self.collectionView.refreshControl = self.refreshControl;
 }
 
 - (void)handleRefresh:(UIRefreshControl *)sender {
