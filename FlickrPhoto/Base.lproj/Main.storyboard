@@ -110,16 +110,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1vJ-ef-27Z">
                                 <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                             </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tB3-Uz-Gvi">
-                                <rect key="frame" x="0.0" y="622" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem title="Save" id="Pkj-5b-rsi">
-                                        <connections>
-                                            <action selector="saveImageAction:" destination="IAz-vM-OBc" id="PLe-lg-tKl"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
+                            <button contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myf-7d-cLV">
+                                <rect key="frame" x="20" y="623" width="136" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="BLH-UE-99A"/>
+                                    <constraint firstAttribute="width" constant="136" id="HTE-r2-wIg"/>
+                                </constraints>
+                                <state key="normal" title="   Download" image="Download"/>
+                            </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B43-31-XB6">
                                 <rect key="frame" x="154.5" y="573" width="66.5" height="32"/>
                                 <constraints>
@@ -132,14 +130,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.72256713699999997" green="0.84031080160000005" blue="0.61844744730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="tB3-Uz-Gvi" secondAttribute="trailing" id="2qe-tb-F2q"/>
                             <constraint firstItem="B43-31-XB6" firstAttribute="centerX" secondItem="VA6-X3-SxW" secondAttribute="centerX" id="IHa-FR-AdA"/>
-                            <constraint firstItem="3y5-PR-yDV" firstAttribute="top" secondItem="tB3-Uz-Gvi" secondAttribute="bottom" constant="1" id="SJD-qX-5Wr"/>
-                            <constraint firstItem="tB3-Uz-Gvi" firstAttribute="leading" secondItem="VA6-X3-SxW" secondAttribute="leading" id="UzV-L2-6Qg"/>
+                            <constraint firstItem="3y5-PR-yDV" firstAttribute="top" secondItem="B43-31-XB6" secondAttribute="bottom" constant="62" id="IZs-nw-7yH"/>
                             <constraint firstAttribute="trailing" secondItem="1vJ-ef-27Z" secondAttribute="trailing" id="XSQ-jg-Kgo"/>
                             <constraint firstItem="1vJ-ef-27Z" firstAttribute="leading" secondItem="VA6-X3-SxW" secondAttribute="leading" id="aWc-Pz-lTT"/>
                             <constraint firstAttribute="bottom" secondItem="1vJ-ef-27Z" secondAttribute="bottom" id="iz8-o9-fJg"/>
-                            <constraint firstItem="tB3-Uz-Gvi" firstAttribute="top" secondItem="B43-31-XB6" secondAttribute="bottom" constant="17" id="maa-pA-yS4"/>
+                            <constraint firstItem="myf-7d-cLV" firstAttribute="leading" secondItem="VA6-X3-SxW" secondAttribute="leadingMargin" constant="4" id="leA-ky-UzV"/>
+                            <constraint firstItem="3y5-PR-yDV" firstAttribute="top" secondItem="myf-7d-cLV" secondAttribute="bottom" constant="12" id="o5r-cn-elk"/>
                             <constraint firstItem="1vJ-ef-27Z" firstAttribute="top" secondItem="VA6-X3-SxW" secondAttribute="top" constant="60" id="uBM-Jz-nyp"/>
                         </constraints>
                     </view>
@@ -172,4 +169,7 @@
             <point key="canvasLocation" x="322" y="-66"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Download" width="25" height="29"/>
+    </resources>
 </document>

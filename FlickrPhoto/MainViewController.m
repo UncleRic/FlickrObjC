@@ -22,13 +22,13 @@ NSString *searchText = @"Shark";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Aquatic Life";
     [self setupRefreshControl];
     [self fetchFlickrPhotoWithSearchString:searchText tag:@"[shark, ocean"];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.title = @"Flickr Viewer";
     if (_currentImageDownloader) {
         [_downloaders replaceObjectAtIndex:_selectedItemIndex withObject:_currentImageDownloader];
     }
